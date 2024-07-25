@@ -1,0 +1,66 @@
+{% extends 'includes/base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+<div class="cover">
+    {% include 'includes/navbar.html' %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="text-center pt-4 text-white">Happy Hours</h1>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container bg-light">
+<div class="row">
+    <br>
+    <div class="col-sm-12 text-center mb-3">
+        <br>
+        <a href="#" class="btn btn-info"> <i class="fa fa-plus"></i> Add Happy Hour</a>
+    </div>
+</div>
+    <div class="row">
+        <div class="col-sm-12">
+
+<br>
+            <table class="table table-sm" id="example">
+                <thead class="bg-secondary text-white">
+                    <tr>
+
+                        <th scope="col">Location</th>
+                        <th scope="col">Day </th>
+                        <td spellcheck="col">Time</td>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for hp in h %}
+                    <tr>
+                        <td>{{  hp.hplace }} </td>
+                        <td>{{  hp.hday }}</td>
+                        <td> {{ hp.htime}}</td>
+                    </tr>
+                    {% endfor%}
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+
+<br>
+</div>
+<div class="col-sm-4"></div>
+
+
+
+
+{% endblock %}

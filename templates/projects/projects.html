@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3 class="mt-4">Pick a Project</h3>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active">Projects</li>
+        </ol>
+
+<div class="card mb-4">
+            <div class="card-header">
+                <i class="fa fa-bar-chart mr-1"></i> Analytics
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                     <table class="table bg-light table-sm" id="example">
+                      <thead class="bg-info text-white">
+                        <tr>
+                          <th scope="col">Project</th>
+                          <th scope="col">Project Name</th>
+                          <th scope="col">State</th>
+                          <th scope="col">Creation Date</th>
+                          <th scope="col">Last Modified</th>
+                          <th scope="col"></th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                            <tr>
+
+                              <td>1</td>
+                                <td><a href="#">National Foods</a></td>
+                              <td>Running</td>
+                              <td></td>
+                              <td></td>
+                                <td><a href="#"><button type="button" class="btn btn-sm btn-outline-primary"><i class="fa fa-area-chart mr-1"></i> View Report</button></a></td>
+
+                            </tr>
+
+                      </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+{% endblock %}

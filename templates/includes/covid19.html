@@ -1,0 +1,90 @@
+{% extends 'includes/base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+{% include 'includes/navbar.html' %}
+<div class="eheka">
+  <div class="container bg-light">
+
+
+    <hr>
+
+    <div class="row  ">
+       <h1 style="color: red; margin-left:20px;" class="text-center pt-4">Covid-19 Reports</h1>
+    </div>
+
+    <br>
+
+    <div class="row">
+      <div class="col-sm-12">
+
+        <table class="table bg-light table-sm" id="example">
+          <thead class="bg-info text-white">
+            <tr>
+
+              <th scope="col">Ticket #</th>
+              <th scope="col">Reference #</th>
+              <th scope="col">Reporter Cell #</th>
+              <th scope="col">Location</th>
+              <th scope="col"> Issue</th>
+              <th scope="col">Report Date</th>
+              <th scope="col">Report Method</th>
+              <th scope="col">Priority</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for entry in entries %}
+            <tr>
+
+              <td>{{entry.ticket_no}}</td>
+              <td>{{entry.ref_no}}</td>
+              <td>{{entry.reporter_cellnumber}}</td>
+              <td>{{entry.location}}</td>
+               <td>{{entry.issue}}</td>
+              <td>{{entry.report_date|date:'d-M-Y'}}</td>
+              <td>{% if entry.received_via == 'SMS' %}
+                <i class="fa fa-envelope" style="color:#ff8c00;"></i> SMS
+                {% else %}
+                <i class="fa fa-whatsapp" style="color:#075E54;"></i> WhatsApp
+                {% endif %}
+              </td>
+              <td>
+                {% if entry.priority == 'High' %}
+                  <p style="background:red;text-align:center;color:white;">High</p>
+                {% elif entry.priority == 'Medium' %}
+                  <p style="background:#FFCC00;text-align:center;color:white;">Medium</p>
+                {% elif entry.priority == 'Low' %}
+                  <p style="background:grey;text-align:center;color:white;">Low</p>
+                {% endif %}
+              </td>
+              <td>
+                {% if entry.report_status == 'P' %}
+                  <p style="color:red;">Pending</p>
+                {% elif entry.report_status == 'I' %}
+                  <p style="color:#FFCC00;">In Process</p>
+                {% endif %}
+              </td>
+              <td><a href="{% url 'block-customer' entry.id %}" class="btn btn-sm btn-outline-info">Assign
+                </a></td>
+
+
+            </tr>
+            {% endfor%}
+
+          </tbody>
+        </table>
+<br>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+</div>
+
+
+
+{% endblock %}

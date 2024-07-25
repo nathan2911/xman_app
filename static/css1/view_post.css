@@ -1,0 +1,33 @@
+.first-dashboard-section{
+	display: flex;
+	justify-content: space-between;
+	color: rgb(200,200,200); 
+	height: 30px; 
+    background-color: #32373d;
+}
+.view-article-container{
+	width: 90%;
+	margin: auto;
+	margin-top: 20px;
+	background-color: rgb(220,220,220);
+	border: solid 1px rgb(200,200,200);
+	box-shadow: 1px 1px 2px rgb(150,150,150);
+}
+.view-article-post-heading{
+	font-size: 40px;
+}
+.view-article-container div{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+.view-article-author{
+	font-style: italic;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid rgb(100,100,100);
+}
+.view-article-post-img img{
+	width: 100%;
+}
